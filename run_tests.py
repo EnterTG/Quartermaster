@@ -18,4 +18,6 @@ if __name__ == "__main__":
     suite = loader.discover(os.path.join(BASE_DIR, "tests"), pattern="test_*.py")
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
-    sys.exit(not result.wasSuccessful())
+    sys.stdout.flush()
+    sys.stderr.flush()
+    os._exit(0 if result.wasSuccessful() else 1)
