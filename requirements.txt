@@ -1,8 +1,8 @@
 fastapi>=0.115
 uvicorn[standard]>=0.30
 httpx>=0.27
-mcp>=1.2
-PySide6>=6.11
+mcp>=1.7         # tool annotations (ToolAnnotations) arrived in 1.7
+PySide6>=6.11,!=6.12.0  # 6.12.0 has shiboken6 refcount leak on Python <3.12 (none_dealloc)
 fastembed>=0.4      # offline CPU embeddings for hybrid semantic search
 numpy>=2.0
 pillow>=10.0      # image loading for the vision pass (already a fastembed transitive dep)

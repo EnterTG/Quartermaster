@@ -3,9 +3,10 @@
 [![Release](https://img.shields.io/github/v/release/Tanshaydar/Quartermaster?include_prereleases&label=release)](https://github.com/Tanshaydar/Quartermaster/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Quartermaster MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/Tanshaydar/Quartermaster/badges/score.svg)](https://glama.ai/mcp/servers/Tanshaydar/Quartermaster)
+[![Quartermaster MCP on mcprush](https://mcprush.com/badge/tanshaydar-quartermaster-mcp/score.svg)](https://mcprush.com/to/tanshaydar-quartermaster-mcp?ref=badge)
 [![MCP Ready](https://img.shields.io/badge/MCP-protocol%20ready-success)](https://modelcontextprotocol.io)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)]()
-[![Telemetry](https://img.shields.io/badge/telemetry-none-success)]()
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
+![Telemetry](https://img.shields.io/badge/telemetry-none-success)
 [![Tests](https://github.com/Tanshaydar/Quartermaster/actions/workflows/tests.yml/badge.svg)](https://github.com/Tanshaydar/Quartermaster/actions/workflows/tests.yml)
 
 This project started because I wanted to prototype a dam.
@@ -242,6 +243,8 @@ Claude Desktop reads `%APPDATA%/Claude/claude_desktop_config.json`, Cursor `~/.c
 | `import_asset_to_project(asset_id, project_dir)` | Unpack a local package into `Assets/` (bundled UPM packages into `Packages/`). |
 | `list_asset_categories()` | Category breakdown and counts. |
 | `get_vault_stats()` | Totals by source and category, local vs cloud. |
+
+You shouldn't have to ask for any of this. The server sends connected agents MCP `instructions`: search the vault before building an asset from scratch or recommending a purchase, and run `audit_project` and `validate_stack` before importing. For agents that load [Agent Skills](https://agentskills.io), [`skills/quartermaster/SKILL.md`](skills/quartermaster/SKILL.md) carries the same workflow with a trigger description, plus setup steps for when the server isn't connected yet. Copy the `skills/quartermaster/` folder into `~/.claude/skills/` for Claude Code, or wherever your agent loads skills from.
 
 Two files let you teach Quartermaster your own vocabulary, no code changes needed:
 
