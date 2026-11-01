@@ -5,8 +5,8 @@
 [![Quartermaster MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/Tanshaydar/Quartermaster/badges/score.svg)](https://glama.ai/mcp/servers/Tanshaydar/Quartermaster)
 [![Quartermaster MCP on mcprush](https://mcprush.com/badge/tanshaydar-quartermaster-mcp/score.svg)](https://mcprush.com/to/tanshaydar-quartermaster-mcp?ref=badge)
 [![MCP Ready](https://img.shields.io/badge/MCP-protocol%20ready-success)](https://modelcontextprotocol.io)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)]()
-[![Telemetry](https://img.shields.io/badge/telemetry-none-success)]()
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
+![Telemetry](https://img.shields.io/badge/telemetry-none-success)
 [![Tests](https://github.com/Tanshaydar/Quartermaster/actions/workflows/tests.yml/badge.svg)](https://github.com/Tanshaydar/Quartermaster/actions/workflows/tests.yml)
 
 This project started because I wanted to prototype a dam.
