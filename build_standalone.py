@@ -157,6 +157,10 @@ for item in ["README.md", "LICENSE"]:
     if os.path.exists(src_path):
         shutil.copy2(src_path, APP_OUT_DIR)
 
+skills_src = os.path.join(BASE_DIR, "skills")
+if os.path.exists(skills_src):
+    shutil.copytree(skills_src, os.path.join(APP_OUT_DIR, "skills"), dirs_exist_ok=True)
+
 # Package archive and calculate hash
 if IS_WIN:
     archive_path = os.path.join(DIST_DIR, f"Quartermaster-{PLATFORM_TAG}.zip")

@@ -32,7 +32,27 @@ from . import semantic, unpacker
 from . import project_audit
 from . import stack_rules
 
-mcp = FastMCP("quartermaster")
+# Sent to the client at initialize, so agents check the vault without the user asking.
+# skills/quartermaster/SKILL.md carries the same workflow for clients that load skills.
+INSTRUCTIONS = """\
+Quartermaster indexes the game-dev assets this user already owns: Unity Asset Store, Fab, \
+Quixel Megascans, Gumroad and Leartes Cosmos.
+
+- Before building an asset from scratch or recommending a purchase (mesh, material, texture, \
+VFX, shader, sound, character, environment, tool), call search_owned_assets. Describe what is \
+needed ("curved concrete wall", "stylized fire spell"), not a product name: search is semantic \
+and visual, so listings that never use the word still match.
+- For a feature or level brief ("third-person village with magic combat"), call \
+get_stack_recommendations to map each aspect onto owned packs.
+- Before import_asset_to_project, run audit_project on the target project (engine, render \
+pipeline) and validate_stack on everything planned for it (role conflicts, missing \
+prerequisites). Import works only for Unity packages with local=true.
+- Results are only things the user owns (ownership "vault_owned") or can claim free \
+(ownership "catalog_grant": Quixel Megascans under the Epic Content License, not yet \
+acquired). Say which, and prefer local=true results: they need no download.
+- Suggest building or buying only for what the vault does not cover."""
+
+mcp = FastMCP("quartermaster", instructions=INSTRUCTIONS)
 
 
 def _slim(item: dict) -> dict:
